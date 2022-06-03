@@ -1,6 +1,12 @@
-from flask import Flask
+from app import create_app
+from app.migrate import init_db
 
-app =  Flask  (_name_)
+app = create_app()
+@app.route("/")
+def index() :
+    return"Hola mundo"
 
-def index ():
-    return 'ho'
+@app.route("/database")
+def database():
+    init_db()
+    return "base de datos creada correctamente."
