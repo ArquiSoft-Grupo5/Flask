@@ -5,7 +5,7 @@ def create_db() :
     db.create_all()
 def init_db()
     """Método de inicialización de nuestra base de datos."""
-    create _db()
+    create_db()
     #User admin apP
     admin = User(
         username="SuperAdmin",
