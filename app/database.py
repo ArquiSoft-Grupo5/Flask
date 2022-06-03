@@ -6,9 +6,9 @@ db = sQLAlchemy ()
 class User(db. Model) :
 
     ___tablename___="users"
-    id db.Column (db.Integer,primary_key-True)
-    username = db.Column (db.String (80), unique=True,nullable-False)
-    is_admin = db.Column (db.Boolean,default-False)
+    id db.Column (db.Integer,primary_key=True)
+    username = db.Column (db.String (80), unique=True,nullable=False)
+    is_admin = db.Column (db.Boolean,default=False)
     def ___repr___ (self) :
         return '<User %r>' % self.username
 
@@ -25,7 +25,7 @@ class Category (db. Model) :
 class Idea (db. Model ):
     ___tablename___ = "ideas"
     id = db.Column (db.Integer, primary_key=True)
-    title = db.Column (db.String (10e), nullable=False)
+    title = db.Column (db.String (80    ), nullable=False)
     description = db.Column (db.String (250) , nullable=False)
     is_public = db.Column (db.Boolean, default=False)
     category_id = db.Column (db.Integer, db.Foreignkey ( 'categories.id' , ondelete="CASCADE"),
